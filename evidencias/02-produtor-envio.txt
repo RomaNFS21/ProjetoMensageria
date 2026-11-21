@@ -1,0 +1,24 @@
+PS D:\Estudos\Cesar\2026.2\Infraestrutura de Software\ProjetoMensageria> py produtor.py
+Iniciando publicação de mensagens na fila 'guias'...
+Enviado: R-001
+Enviado: R-002
+Enviado: R-003
+Enviado: R-004
+Enviado: R-005
+Enviado: R-006
+Enviado: R-007
+Enviado: R-008
+Enviado: R-009
+Enviado: R-010
+Enviado: R-011
+Enviado: R-012
+Enviado: R-013
+Enviado: R-014
+Enviado: R-015
+Enviado: R-016
+Enviado: R-017
+Enviado: R-018
+Enviado: R-019
+Enviado: R-020
+Enviado pedido inválido (sem requisicaoId)
+21 mensagens enviadas

@@ -1,0 +1,18 @@
+PS D:\Estudos\Cesar\2026.2\Infraestrutura de Software\ProjetoMensageria> py configurar_dlq.py
+Fila principal: http://localhost:9324/000000000000/guias
+DLQ criada: http://localhost:9324/000000000000/guias-dlq (ARN: arn:aws:sqs:elasticmq:000000000000:guias-dlq)
+RedrivePolicy: maxReceiveCount=3
+
+--- Ciclo de Tentativas na Fila Principal (guias) ---
+[Tentativa 1] falhou; volta para a fila: mensagem sem requisicaoId (ReceiveCount=1)
+[Tentativa 2] falhou; volta para a fila: mensagem sem requisicaoId (ReceiveCount=2)
+[Tentativa 3] falhou; volta para a fila: mensagem sem requisicaoId (ReceiveCount=3)
+[Tentativa 4 na fila principal]: 0 mensagens encontradas (mensagem saiu da fila).
+
+--- Verificação da Fila de Mensagens Mortas (guias-dlq) ---
+PS D:\Estudos\Cesar\2026.2\Infraestrutura de Software\ProjetoMensageria> py verificar_dlq.py
+Mensagens na DLQ: 1
+MessageId: 3e2961e2-2111-4e31-8217-6c588c45b8c9
+Corpo: {"hospital": "H-Recife"}
+ReceiveCount final: 4
+SUCESSO: A mensagem inválida foi isolada na DLQ sem travar o processamento das mensagens válidas!

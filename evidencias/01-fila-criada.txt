@@ -1,0 +1,14 @@
+PS D:\Estudos\Cesar\2026.2\Infraestrutura de Software\ProjetoMensageria> py criar_fila.py
+Conectando ao serviço SQS em http://localhost:9324...
+Criando fila 'guias' com VisibilityTimeout=15s...
+Fila 'guias' criada com sucesso!
+QueueUrl: http://localhost:9324/000000000000/guias
+
+PS D:\Estudos\Cesar\2026.2\Infraestrutura de Software\ProjetoMensageria> py -c "import boto3, json; sqs=boto3.client('sqs', endpoint_url='http://localhost:9324', region_name='us-east-1', aws_access_key_id='x', aws_secret_access_key='x'); print(json.dumps(sqs.get_queue_attributes(QueueUrl='http://localhost:9324/000000000000/guias', AttributeNames=['All'])['Attributes'], indent=2))"
+{
+  "QueueArn": "arn:aws:sqs:elasticmq:000000000000:guias",
+  "VisibilityTimeout": "15",
+  "ApproximateNumberOfMessages": "0",
+  "ApproximateNumberOfMessagesNotVisible": "0",
+  "CreatedTimestamp": "1795255481"
+}
